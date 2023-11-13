@@ -8,7 +8,7 @@ def login():
 def namespaces():
    lista = []
    #Pasar el output de shellscript a una lista
-   cmd="oc get namespaces --no-headers | grep stevo | awk '{print $1}'"
+   cmd="oc get namespaces --no-headers | awk '{print $1}'"
    projects = subprocess.Popen(cmd,shell=True,stdin=None,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
    result=projects.stdout.readlines()
 
